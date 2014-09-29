@@ -1,6 +1,6 @@
 {
   "name": "mojo-pubnub",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Pubnub plugin for mojo-based applications.",
   "main": "./lib/index.ls",
   "scripts": {
@@ -29,5 +29,8 @@
     "mojo-models": "^0.2.1",
     "mojo-paperclip": "^0.5.6",
     "mojo-views": "^0.1.27"
+  },
+  "dependencies": {
+    "uuid": "^2.0.1"
   }
 }
