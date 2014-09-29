@@ -1,0 +1,33 @@
+{
+  "name": "mojo-pubnub",
+  "version": "0.0.1",
+  "description": "Pubnub plugin for mojo-based applications.",
+  "main": "./lib/index.ls",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mojo-js/mojo-pubnub.git"
+  },
+  "browser": {
+    "pubnub": "./vendor/pubnub.min.js",
+    "jquery": "./vendor/jquery.min.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mojo-js/mojo-pubnub/issues"
+  },
+  "homepage": "https://github.com/mojo-js/mojo-pubnub",
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^1.21.4",
+    "mojo-application": "0.0.17",
+    "mojo-cli": "0.0.22",
+    "mojo-event-bus": "0.0.x",
+    "mojo-models": "^0.2.1",
+    "mojo-paperclip": "^0.5.6",
+    "mojo-views": "^0.1.27"
+  }
+}
