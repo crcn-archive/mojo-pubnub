@@ -1,4 +1,5 @@
-var Application = require("mojo-application");
+var Application = require("mojo-application"),
+uuid = require("uuid");
 
 window.$ = require("jquery");
 
@@ -25,7 +26,8 @@ var app = new TodosApplication();
 
 $(document).ready(function () {
 
-  console.log("PUB");
+
+  app.eventBus.publish("/initializeRealtime", uuid.v4());
   app.eventBus.publish("/channel", "todos");
 
   document.body.appendChild(app.views.create("main", {
