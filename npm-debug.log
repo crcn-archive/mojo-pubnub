@@ -1,0 +1,115 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@1.4.24
+3 info using node@v0.10.30
+4 verbose publish [ '.' ]
+5 verbose cache add [ '.', null ]
+6 verbose cache add name=undefined spec="." args=[".",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: '.',
+7 verbose parsed url   path: '.',
+7 verbose parsed url   href: '.' }
+8 silly lockFile 3a52ce78- .
+9 verbose lock . /Users/craig/.npm/3a52ce78-.lock
+10 verbose tar pack [ '/Users/craig/.npm/mojo-pubnub/0.0.10/package.tgz', '.' ]
+11 verbose tarball /Users/craig/.npm/mojo-pubnub/0.0.10/package.tgz
+12 verbose folder .
+13 info prepublish mojo-pubnub@0.0.10
+14 silly lockFile 1f1177db-tar tar://.
+15 verbose lock tar://. /Users/craig/.npm/1f1177db-tar.lock
+16 silly lockFile 88dea837-m-mojo-pubnub-0-0-10-package-tgz tar:///Users/craig/.npm/mojo-pubnub/0.0.10/package.tgz
+17 verbose lock tar:///Users/craig/.npm/mojo-pubnub/0.0.10/package.tgz /Users/craig/.npm/88dea837-m-mojo-pubnub-0-0-10-package-tgz.lock
+18 silly lockFile 1f1177db-tar tar://.
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile 88dea837-m-mojo-pubnub-0-0-10-package-tgz tar:///Users/craig/.npm/mojo-pubnub/0.0.10/package.tgz
+21 silly lockFile 88dea837-m-mojo-pubnub-0-0-10-package-tgz tar:///Users/craig/.npm/mojo-pubnub/0.0.10/package.tgz
+22 silly lockFile 71589ba2-g-npm-mojo-pubnub-0-0-10-package /Users/craig/.npm/mojo-pubnub/0.0.10/package
+23 verbose lock /Users/craig/.npm/mojo-pubnub/0.0.10/package /Users/craig/.npm/71589ba2-g-npm-mojo-pubnub-0-0-10-package.lock
+24 silly lockFile 71589ba2-g-npm-mojo-pubnub-0-0-10-package /Users/craig/.npm/mojo-pubnub/0.0.10/package
+25 silly lockFile 71589ba2-g-npm-mojo-pubnub-0-0-10-package /Users/craig/.npm/mojo-pubnub/0.0.10/package
+26 silly lockFile 3a52ce78- .
+27 silly lockFile 3a52ce78- .
+28 silly publish { name: 'mojo-pubnub',
+28 silly publish   version: '0.0.10',
+28 silly publish   description: 'Pubnub plugin for mojo-based applications.',
+28 silly publish   main: './lib/index.js',
+28 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+28 silly publish   repository:
+28 silly publish    { type: 'git',
+28 silly publish      url: 'https://github.com/mojo-js/mojo-pubnub.git' },
+28 silly publish   browser:
+28 silly publish    { pubnub: './vendor/pubnub.min.js',
+28 silly publish      jquery: './vendor/jquery.min.js' },
+28 silly publish   author: '',
+28 silly publish   license: 'ISC',
+28 silly publish   bugs: { url: 'https://github.com/mojo-js/mojo-pubnub/issues' },
+28 silly publish   homepage: 'https://github.com/mojo-js/mojo-pubnub',
+28 silly publish   devDependencies:
+28 silly publish    { 'expect.js': '^0.3.1',
+28 silly publish      mocha: '^1.21.4',
+28 silly publish      'mojo-application': '0.0.17',
+28 silly publish      'mojo-cli': '0.0.22',
+28 silly publish      'mojo-event-bus': '0.0.x',
+28 silly publish      'mojo-paperclip': '^0.5.6',
+28 silly publish      'mojo-views': '^0.1.27',
+28 silly publish      'mojo-models': '0.2.x' },
+28 silly publish   dependencies: { uuid: '^2.0.1' },
+28 silly publish   readme: 'Pubnub plugin for mojo-based applications.\n\n```javascript\nvar Application = require("mojo-application"),\nmodels          = require("mojo-models");\n\nvar MyApplication = Application.extend({\n  config: {\n    pubnub: {\n      key: "ABC-DEF-GHI"\n    }\n  },\n  plugins: [  \n    models,                    // model layer we\'re gonna make realtime\n    require("mojo-event-bus"), // required for hooking mojo models with pubnub\n    require("mojo-pubnub"),    // takes event bus changes, and publishes them to pubnub\n    require("./models")\n  ]\n});\n\n\nvar app = new MyApplication();\napp.initialize();\n```\n\n./models/index.js:\n\n```javascript\nmodule.exports = function (app) {\n  app.models.register({\n    todo: require("./todo"),\n    todos: require("./todos")\n  });\n}\n```\n\n./models/todo.js:\n\n```javascript\nvar models = require("models");\nmodule.exports = models.Base.extend({\n});\n```\n\n./models/todos.js:\n\n```javascript\nvar models = require("models");\nmodule.exports = models.Collection.extend({\n  createModel: function (properties) {\n    return this.application.models.create(properties);\n  }\n});\n```\n\nThat\'s all there is to it! \n',
+28 silly publish   readmeFilename: 'README.md',
+28 silly publish   gitHead: 'f595b06110a4e9aff2777cf3c1b1ca92f1dca1ed',
+28 silly publish   _id: 'mojo-pubnub@0.0.10',
+28 silly publish   _shasum: '53f943e4fdd4ae462c42b9140ce3fe1f91b207bf',
+28 silly publish   _from: '.' }
+29 verbose request where is /mojo-pubnub
+30 verbose request registry http://registry.npmjs.org/
+31 verbose request id 23bc1a96338a3cda
+32 verbose url raw /mojo-pubnub
+33 verbose url resolving [ 'http://registry.npmjs.org/', './mojo-pubnub' ]
+34 verbose url resolved http://registry.npmjs.org/mojo-pubnub
+35 verbose request where is http://registry.npmjs.org/mojo-pubnub
+36 info trying registry request attempt 1 at 18:15:48
+37 http PUT http://registry.npmjs.org/mojo-pubnub
+38 http 403 http://registry.npmjs.org/mojo-pubnub
+39 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+39 verbose headers   'content-type': 'application/json',
+39 verbose headers   'cache-control': 'max-age=60',
+39 verbose headers   'content-length': '4299',
+39 verbose headers   'accept-ranges': 'bytes',
+39 verbose headers   date: 'Tue, 30 Sep 2014 01:15:49 GMT',
+39 verbose headers   via: '1.1 varnish',
+39 verbose headers   connection: 'keep-alive',
+39 verbose headers   'x-served-by': 'cache-lax1432-LAX',
+39 verbose headers   'x-cache': 'MISS',
+39 verbose headers   'x-cache-hits': '0',
+39 verbose headers   'x-timer': 'S1412039748.947981,VS0,VE525' }
+40 error publish Failed PUT 403
+41 error Error: forbidden cannot modify pre-existing version: 0.0.10
+41 error old={"name":"mojo-pubnub","version":"0.0.10","description":"Pubnub plugin for mojo-based applications.","main":"./lib/index.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1"},"repository":{"type":"git","url":"https://github.com/mojo-js/mojo-pubnub.git"},"browser":{"pubnub":"./vendor/pubnub.min.js","jquery":"./vendor/jquery.min.js"},"author":"","license":"ISC","bugs":{"url":"https://github.com/mojo-js/mojo-pubnub/issues"},"homepage":"https://github.com/mojo-js/mojo-pubnub","devDependencies":{"expect.js":"^0.3.1","mocha":"^1.21.4","mojo-application":"0.0.17","mojo-cli":"0.0.22","mojo-event-bus":"0.0.x","mojo-paperclip":"^0.5.6","mojo-views":"^0.1.27","mojo-models":"0.2.x"},"dependencies":{"uuid":"^2.0.1"},"gitHead":"f595b06110a4e9aff2777cf3c1b1ca92f1dca1ed","_id":"mojo-pubnub@0.0.10","_shasum":"53f943e4fdd4ae462c42b9140ce3fe1f91b207bf","_from":".","_npmVersion":"1.4.24","_npmUser":{"name":"architectd","email":"craig.j.condon@gmail.com"},"maintainers":[{"name":"architectd","email":"craig.j.condon@gmail.com"}],"dist":{"shasum":"53f943e4fdd4ae462c42b9140ce3fe1f91b207bf","tarball":"http://registry.npmjs.org/mojo-pubnub/-/mojo-pubnub-0.0.10.tgz"}}
+41 error new={"name":"mojo-pubnub","version":"0.0.10","description":"Pubnub plugin for mojo-based applications.","main":"./lib/index.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1"},"repository":{"type":"git","url":"https://github.com/mojo-js/mojo-pubnub.git"},"browser":{"pubnub":"./vendor/pubnub.min.js","jquery":"./vendor/jquery.min.js"},"author":"","license":"ISC","bugs":{"url":"https://github.com/mojo-js/mojo-pubnub/issues"},"homepage":"https://github.com/mojo-js/mojo-pubnub","devDependencies":{"expect.js":"^0.3.1","mocha":"^1.21.4","mojo-application":"0.0.17","mojo-cli":"0.0.22","mojo-event-bus":"0.0.x","mojo-paperclip":"^0.5.6","mojo-views":"^0.1.27","mojo-models":"0.2.x"},"dependencies":{"uuid":"^2.0.1"},"readme":"Pubnub plugin for mojo-based applications.\u000a\u000a```javascript\u000avar Application = require(\"mojo-application\"),\u000amodels          = require(\"mojo-models\");\u000a\u000avar MyApplication = Application.extend({\u000a  config: {\u000a    pubnub: {\u000a      key: \"ABC-DEF-GHI\"\u000a    }\u000a  },\u000a  plugins: [  \u000a    models,                    // model layer we're gonna make realtime\u000a    require(\"mojo-event-bus\"), // required for hooking mojo models with pubnub\u000a    require(\"mojo-pubnub\"),    // takes event bus changes, and publishes them to pubnub\u000a    require(\"./models\")\u000a  ]\u000a});\u000a\u000a\u000avar app = new MyApplication();\u000aapp.initialize();\u000a```\u000a\u000a./models/index.js:\u000a\u000a```javascript\u000amodule.exports = function (app) {\u000a  app.models.register({\u000a    todo: require(\"./todo\"),\u000a    todos: require(\"./todos\")\u000a  });\u000a}\u000a```\u000a\u000a./models/todo.js:\u000a\u000a```javascript\u000avar models = require(\"models\");\u000amodule.exports = models.Base.extend({\u000a});\u000a```\u000a\u000a./models/todos.js:\u000a\u000a```javascript\u000avar models = require(\"models\");\u000amodule.exports = models.Collection.extend({\u000a  createModel: function (properties) {\u000a    return this.application.models.create(properties);\u000a  }\u000a});\u000a```\u000a\u000aThat's all there is to it! \u000a","readmeFilename":"README.md","gitHead":"f595b06110a4e9aff2777cf3c1b1ca92f1dca1ed","_id":"mojo-pubnub@0.0.10","_shasum":"53f943e4fdd4ae462c42b9140ce3fe1f91b207bf","_from":".","_npmVersion":"1.4.24","_npmUser":{"name":"architectd","email":"craig.j.condon@gmail.com"},"maintainers":[{"name":"architectd","email":"craig.j.condon@gmail.com"}],"dist":{"shasum":"53f943e4fdd4ae462c42b9140ce3fe1f91b207bf","tarball":"http://registry.npmjs.org/mojo-pubnub/-/mojo-pubnub-0.0.10.tgz"}}: mojo-pubnub
+41 error     at RegClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:300:14)
+41 error     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:238:65)
+41 error     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:123:22)
+41 error     at Request.emit (events.js:98:17)
+41 error     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:893:14)
+41 error     at Request.emit (events.js:117:20)
+41 error     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:844:12)
+41 error     at IncomingMessage.emit (events.js:117:20)
+41 error     at _stream_readable.js:938:16
+41 error     at process._tickCallback (node.js:419:13)
+42 error If you need help, you may report this *entire* log,
+42 error including the npm and node versions, at:
+42 error     <http://github.com/npm/npm/issues>
+43 error System Darwin 13.4.0
+44 error command "node" "/usr/local/bin/npm" "publish"
+45 error cwd /Users/craig/Developer/Public/mojo-pubnub
+46 error node -v v0.10.30
+47 error npm -v 1.4.24
+48 verbose exit [ 1, true ]
