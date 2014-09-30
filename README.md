@@ -1,3 +1,5 @@
+**This plugin is still very experimental**
+
 This plugin will automatically discover relationships between your model layer, and synchronize changes across different platforms via pubnub. No need to change your application structure - just add a few lines of code!
 
 
