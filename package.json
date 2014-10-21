@@ -1,6 +1,6 @@
 {
   "name": "mojo-pubnub",
-  "version": "0.0.16",
+  "version": "0.0.18",
   "description": "Pubnub plugin for mojo-based applications.",
   "main": "./lib/index.js",
   "scripts": {
