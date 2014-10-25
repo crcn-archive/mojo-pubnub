@@ -1,0 +1,106 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@2.1.4
+3 info using node@v0.10.30
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec { raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/craig/Developer/Public/mojo-pubnub',
+7 silly cache add   type: 'directory' }
+8 verbose tar pack [ '/Users/craig/.npm/mojo-pubnub/0.0.18/package.tgz',
+8 verbose tar pack   '/Users/craig/Developer/Public/mojo-pubnub' ]
+9 verbose tarball /Users/craig/.npm/mojo-pubnub/0.0.18/package.tgz
+10 verbose folder /Users/craig/Developer/Public/mojo-pubnub
+11 info prepublish mojo-pubnub@0.0.18
+12 verbose addLocalTarball adding from inside cache /Users/craig/.npm/mojo-pubnub/0.0.18/package.tgz
+13 silly cache afterAdd mojo-pubnub@0.0.18
+14 verbose afterAdd /Users/craig/.npm/mojo-pubnub/0.0.18/package/package.json not in flight; writing
+15 verbose afterAdd /Users/craig/.npm/mojo-pubnub/0.0.18/package/package.json written
+16 silly publish { name: 'mojo-pubnub',
+16 silly publish   version: '0.0.18',
+16 silly publish   description: 'Pubnub plugin for mojo-based applications.',
+16 silly publish   main: './lib/index.js',
+16 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+16 silly publish   repository:
+16 silly publish    { type: 'git',
+16 silly publish      url: 'https://github.com/mojo-js/mojo-pubnub.git' },
+16 silly publish   browser:
+16 silly publish    { pubnub: './vendor/pubnub.min.js',
+16 silly publish      jquery: './vendor/jquery.min.js' },
+16 silly publish   author: '',
+16 silly publish   license: 'ISC',
+16 silly publish   bugs: { url: 'https://github.com/mojo-js/mojo-pubnub/issues' },
+16 silly publish   homepage: 'https://github.com/mojo-js/mojo-pubnub',
+16 silly publish   devDependencies:
+16 silly publish    { 'expect.js': '^0.3.1',
+16 silly publish      mocha: '^1.21.4',
+16 silly publish      'mojo-application': '0.0.17',
+16 silly publish      'mojo-cli': '0.0.22',
+16 silly publish      'mojo-event-bus': '0.0.x',
+16 silly publish      'mojo-paperclip': '^0.6.x',
+16 silly publish      'mojo-views': '0.2.x',
+16 silly publish      'mojo-models': '0.3.x' },
+16 silly publish   dependencies: { uuid: '^2.0.1' },
+16 silly publish   readme: '**This plugin is still very experimental.**\n\nThis plugin will automatically discover relationships between your model layer, and synchronize changes across different platforms via pubnub. No need to change your application structure - just add a few lines of code!\n\n### See Also \n\n- [event bus](https://github.com/mojo-js/mojo-event-bus) - event bus system for views & models.\n\n\n### Example\n\n\n```javascript\nvar Application = require("mojo-application"),\nmodels          = require("mojo-models");\n\nvar MyApplication = Application.extend({\n  config: {\n    pubnub: {\n      key: "ABC-DEF-GHI"\n    }\n  },\n  plugins: [  \n    models,                    // model layer we\'re gonna make realtime\n    require("mojo-event-bus"), // required for hooking mojo models with pubnub\n    require("mojo-pubnub"),    // takes event bus changes, and publishes them to pubnub\n    require("./models")\n  ]\n});\n\n\nvar app = new MyApplication();\napp.initialize();\n```\n\n./models/index.js:\n\n```javascript\nmodule.exports = function (app) {\n  app.models.register({\n    todo: require("./todo"),\n    todos: require("./todos")\n  });\n}\n```\n\n./models/todo.js:\n\n```javascript\nvar models = require("models");\nmodule.exports = models.Base.extend({\n});\n```\n\n./models/todos.js:\n\n```javascript\nvar models = require("models");\nmodule.exports = models.Collection.extend({\n  createModel: function (properties) {\n    return this.application.models.create(properties);\n  }\n});\n```\n\nThat\'s all there is to it! \n',
+16 silly publish   readmeFilename: 'README.md',
+16 silly publish   gitHead: '4d21fc1115c34f068fc15ea26de9237af51d514e',
+16 silly publish   _id: 'mojo-pubnub@0.0.18',
+16 silly publish   _shasum: 'bf6565dab68c63708e261e9ae5f1a7ad505c05f7',
+16 silly publish   _from: '.' }
+17 verbose mapToRegistry name mojo-pubnub
+18 verbose mapToRegistry uri http://registry.npmjs.org/mojo-pubnub
+19 verbose publish registryBase http://registry.npmjs.org/
+20 verbose request on initialization, where is /mojo-pubnub
+21 verbose request after pass 1, where is /mojo-pubnub
+22 verbose request url raw /mojo-pubnub
+23 verbose request resolving registry [ 'http://registry.npmjs.org/', './mojo-pubnub' ]
+24 verbose request after pass 2, where is http://registry.npmjs.org/mojo-pubnub
+25 verbose request sending authorization for write operation
+26 info attempt registry request try #1 at 12:53:18
+27 verbose request id c247947c185f88b7
+28 http request PUT http://registry.npmjs.org/mojo-pubnub
+29 http 403 http://registry.npmjs.org/mojo-pubnub
+30 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+30 verbose headers   'content-type': 'application/json',
+30 verbose headers   'cache-control': 'max-age=60',
+30 verbose headers   'content-length': '4760',
+30 verbose headers   'accept-ranges': 'bytes',
+30 verbose headers   date: 'Tue, 21 Oct 2014 19:53:19 GMT',
+30 verbose headers   via: '1.1 varnish',
+30 verbose headers   connection: 'keep-alive',
+30 verbose headers   'x-served-by': 'cache-lax1433-LAX',
+30 verbose headers   'x-cache': 'MISS',
+30 verbose headers   'x-cache-hits': '0',
+30 verbose headers   'x-timer': 'S1413921198.817833,VS0,VE915' }
+31 error publish Failed PUT 403
+32 verbose stack Error: forbidden cannot modify pre-existing version: 0.0.18
+32 verbose stack old={"name":"mojo-pubnub","version":"0.0.18","description":"Pubnub plugin for mojo-based applications.","main":"./lib/index.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1"},"repository":{"type":"git","url":"https://github.com/mojo-js/mojo-pubnub.git"},"browser":{"pubnub":"./vendor/pubnub.min.js","jquery":"./vendor/jquery.min.js"},"author":"","license":"ISC","bugs":{"url":"https://github.com/mojo-js/mojo-pubnub/issues"},"homepage":"https://github.com/mojo-js/mojo-pubnub","devDependencies":{"expect.js":"^0.3.1","mocha":"^1.21.4","mojo-application":"0.0.17","mojo-cli":"0.0.22","mojo-event-bus":"0.0.x","mojo-paperclip":"^0.6.x","mojo-views":"0.2.x","mojo-models":"0.3.x"},"dependencies":{"uuid":"^2.0.1"},"gitHead":"2cef13798bc25d4d56a0a0cfef436eda5cb44347","_id":"mojo-pubnub@0.0.18","_shasum":"bf6565dab68c63708e261e9ae5f1a7ad505c05f7","_from":".","_npmVersion":"2.1.4","_nodeVersion":"0.10.30","_npmUser":{"name":"architectd","email":"craig.j.condon@gmail.com"},"maintainers":[{"name":"architectd","email":"craig.j.condon@gmail.com"}],"dist":{"shasum":"bf6565dab68c63708e261e9ae5f1a7ad505c05f7","tarball":"http://registry.npmjs.org/mojo-pubnub/-/mojo-pubnub-0.0.18.tgz"}}
+32 verbose stack new={"name":"mojo-pubnub","version":"0.0.18","description":"Pubnub plugin for mojo-based applications.","main":"./lib/index.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1"},"repository":{"type":"git","url":"https://github.com/mojo-js/mojo-pubnub.git"},"browser":{"pubnub":"./vendor/pubnub.min.js","jquery":"./vendor/jquery.min.js"},"author":"","license":"ISC","bugs":{"url":"https://github.com/mojo-js/mojo-pubnub/issues"},"homepage":"https://github.com/mojo-js/mojo-pubnub","devDependencies":{"expect.js":"^0.3.1","mocha":"^1.21.4","mojo-application":"0.0.17","mojo-cli":"0.0.22","mojo-event-bus":"0.0.x","mojo-paperclip":"^0.6.x","mojo-views":"0.2.x","mojo-models":"0.3.x"},"dependencies":{"uuid":"^2.0.1"},"readme":"**This plugin is still very experimental.**\u000a\u000aThis plugin will automatically discover relationships between your model layer, and synchronize changes across different platforms via pubnub. No need to change your application structure - just add a few lines of code!\u000a\u000a### See Also \u000a\u000a- [event bus](https://github.com/mojo-js/mojo-event-bus) - event bus system for views & models.\u000a\u000a\u000a### Example\u000a\u000a\u000a```javascript\u000avar Application = require(\"mojo-application\"),\u000amodels          = require(\"mojo-models\");\u000a\u000avar MyApplication = Application.extend({\u000a  config: {\u000a    pubnub: {\u000a      key: \"ABC-DEF-GHI\"\u000a    }\u000a  },\u000a  plugins: [  \u000a    models,                    // model layer we're gonna make realtime\u000a    require(\"mojo-event-bus\"), // required for hooking mojo models with pubnub\u000a    require(\"mojo-pubnub\"),    // takes event bus changes, and publishes them to pubnub\u000a    require(\"./models\")\u000a  ]\u000a});\u000a\u000a\u000avar app = new MyApplication();\u000aapp.initialize();\u000a```\u000a\u000a./models/index.js:\u000a\u000a```javascript\u000amodule.exports = function (app) {\u000a  app.models.register({\u000a    todo: require(\"./todo\"),\u000a    todos: require(\"./todos\")\u000a  });\u000a}\u000a```\u000a\u000a./models/todo.js:\u000a\u000a```javascript\u000avar models = require(\"models\");\u000amodule.exports = models.Base.extend({\u000a});\u000a```\u000a\u000a./models/todos.js:\u000a\u000a```javascript\u000avar models = require(\"models\");\u000amodule.exports = models.Collection.extend({\u000a  createModel: function (properties) {\u000a    return this.application.models.create(properties);\u000a  }\u000a});\u000a```\u000a\u000aThat's all there is to it! \u000a","readmeFilename":"README.md","gitHead":"4d21fc1115c34f068fc15ea26de9237af51d514e","_id":"mojo-pubnub@0.0.18","_shasum":"bf6565dab68c63708e261e9ae5f1a7ad505c05f7","_from":".","_npmVersion":"2.1.4","_nodeVersion":"0.10.30","_npmUser":{"name":"architectd","email":"craig.j.condon@gmail.com"},"maintainers":[{"name":"architectd","email":"craig.j.condon@gmail.com"}],"dist":{"shasum":"bf6565dab68c63708e261e9ae5f1a7ad505c05f7","tarball":"http://registry.npmjs.org/mojo-pubnub/-/mojo-pubnub-0.0.18.tgz"}}: mojo-pubnub
+32 verbose stack     at RegClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:260:14)
+32 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:197:65)
+32 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:237:22)
+32 verbose stack     at Request.emit (events.js:98:17)
+32 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1146:14)
+32 verbose stack     at Request.emit (events.js:117:20)
+32 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1097:12)
+32 verbose stack     at IncomingMessage.emit (events.js:117:20)
+32 verbose stack     at _stream_readable.js:938:16
+32 verbose stack     at process._tickCallback (node.js:419:13)
+33 verbose statusCode 403
+34 verbose pkgid mojo-pubnub
+35 verbose cwd /Users/craig/Developer/Public/mojo-pubnub
+36 error Darwin 14.0.0
+37 error argv "node" "/usr/local/bin/npm" "publish"
+38 error node v0.10.30
+39 error npm  v2.1.4
+40 error code E403
+41 error forbidden cannot modify pre-existing version: 0.0.18
+41 error old={"name":"mojo-pubnub","version":"0.0.18","description":"Pubnub plugin for mojo-based applications.","main":"./lib/index.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1"},"repository":{"type":"git","url":"https://github.com/mojo-js/mojo-pubnub.git"},"browser":{"pubnub":"./vendor/pubnub.min.js","jquery":"./vendor/jquery.min.js"},"author":"","license":"ISC","bugs":{"url":"https://github.com/mojo-js/mojo-pubnub/issues"},"homepage":"https://github.com/mojo-js/mojo-pubnub","devDependencies":{"expect.js":"^0.3.1","mocha":"^1.21.4","mojo-application":"0.0.17","mojo-cli":"0.0.22","mojo-event-bus":"0.0.x","mojo-paperclip":"^0.6.x","mojo-views":"0.2.x","mojo-models":"0.3.x"},"dependencies":{"uuid":"^2.0.1"},"gitHead":"2cef13798bc25d4d56a0a0cfef436eda5cb44347","_id":"mojo-pubnub@0.0.18","_shasum":"bf6565dab68c63708e261e9ae5f1a7ad505c05f7","_from":".","_npmVersion":"2.1.4","_nodeVersion":"0.10.30","_npmUser":{"name":"architectd","email":"craig.j.condon@gmail.com"},"maintainers":[{"name":"architectd","email":"craig.j.condon@gmail.com"}],"dist":{"shasum":"bf6565dab68c63708e261e9ae5f1a7ad505c05f7","tarball":"http://registry.npmjs.org/mojo-pubnub/-/mojo-pubnub-0.0.18.tgz"}}
+41 error new={"name":"mojo-pubnub","version":"0.0.18","description":"Pubnub plugin for mojo-based applications.","main":"./lib/index.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1"},"repository":{"type":"git","url":"https://github.com/mojo-js/mojo-pubnub.git"},"browser":{"pubnub":"./vendor/pubnub.min.js","jquery":"./vendor/jquery.min.js"},"author":"","license":"ISC","bugs":{"url":"https://github.com/mojo-js/mojo-pubnub/issues"},"homepage":"https://github.com/mojo-js/mojo-pubnub","devDependencies":{"expect.js":"^0.3.1","mocha":"^1.21.4","mojo-application":"0.0.17","mojo-cli":"0.0.22","mojo-event-bus":"0.0.x","mojo-paperclip":"^0.6.x","mojo-views":"0.2.x","mojo-models":"0.3.x"},"dependencies":{"uuid":"^2.0.1"},"readme":"**This plugin is still very experimental.**\u000a\u000aThis plugin will automatically discover relationships between your model layer, and synchronize changes across different platforms via pubnub. No need to change your application structure - just add a few lines of code!\u000a\u000a### See Also \u000a\u000a- [event bus](https://github.com/mojo-js/mojo-event-bus) - event bus system for views & models.\u000a\u000a\u000a### Example\u000a\u000a\u000a```javascript\u000avar Application = require(\"mojo-application\"),\u000amodels          = require(\"mojo-models\");\u000a\u000avar MyApplication = Application.extend({\u000a  config: {\u000a    pubnub: {\u000a      key: \"ABC-DEF-GHI\"\u000a    }\u000a  },\u000a  plugins: [  \u000a    models,                    // model layer we're gonna make realtime\u000a    require(\"mojo-event-bus\"), // required for hooking mojo models with pubnub\u000a    require(\"mojo-pubnub\"),    // takes event bus changes, and publishes them to pubnub\u000a    require(\"./models\")\u000a  ]\u000a});\u000a\u000a\u000avar app = new MyApplication();\u000aapp.initialize();\u000a```\u000a\u000a./models/index.js:\u000a\u000a```javascript\u000amodule.exports = function (app) {\u000a  app.models.register({\u000a    todo: require(\"./todo\"),\u000a    todos: require(\"./todos\")\u000a  });\u000a}\u000a```\u000a\u000a./models/todo.js:\u000a\u000a```javascript\u000avar models = require(\"models\");\u000amodule.exports = models.Base.extend({\u000a});\u000a```\u000a\u000a./models/todos.js:\u000a\u000a```javascript\u000avar models = require(\"models\");\u000amodule.exports = models.Collection.extend({\u000a  createModel: function (properties) {\u000a    return this.application.models.create(properties);\u000a  }\u000a});\u000a```\u000a\u000aThat's all there is to it! \u000a","readmeFilename":"README.md","gitHead":"4d21fc1115c34f068fc15ea26de9237af51d514e","_id":"mojo-pubnub@0.0.18","_shasum":"bf6565dab68c63708e261e9ae5f1a7ad505c05f7","_from":".","_npmVersion":"2.1.4","_nodeVersion":"0.10.30","_npmUser":{"name":"architectd","email":"craig.j.condon@gmail.com"},"maintainers":[{"name":"architectd","email":"craig.j.condon@gmail.com"}],"dist":{"shasum":"bf6565dab68c63708e261e9ae5f1a7ad505c05f7","tarball":"http://registry.npmjs.org/mojo-pubnub/-/mojo-pubnub-0.0.18.tgz"}}: mojo-pubnub
+42 error If you need help, you may report this error at:
+42 error     <http://github.com/npm/npm/issues>
+43 verbose exit [ 1, true ]
